@@ -145,3 +145,119 @@ La funzione `mlx_loop_end()` viene utilizzata per terminare il loop principale d
 int mlx_sync(int sync);
 ```
 La funzione `mlx_sync()` viene utilizzata per abilitare o disabilitare la sincronizzazione dei comandi inviati al server X. Quando la sincronizzazione è abilitata, ogni comando viene eseguito in modo sincrono, assicurando che venga completato prima di eseguire il comando successivo. Riceve come argomento un valore intero che specifica se la sincronizzazione deve essere abilitata (1) o disabilitata (0).
+
+
+### Test Main
+
+1. Esempio di inizializzazione della finestra:
+```c
+#include <mlx.h>
+
+int main()
+{
+    void *mlx_ptr;
+    void *win_ptr;
+
+    mlx_ptr = mlx_init();
+    win_ptr = mlx_new_window(mlx_ptr, 800, 600, "Finestra di Esempio");
+
+    mlx_loop(mlx_ptr);
+
+    return 0;
+}
+```
+
+2. Esempio di test di stampa nella finestra:
+```c
+#include <mlx.h>
+
+int main()
+{
+    void *mlx_ptr;
+    void *win_ptr;
+
+    mlx_ptr = mlx_init();
+    win_ptr = mlx_new_window(mlx_ptr, 800, 600, "Finestra di Esempio");
+
+    mlx_string_put(mlx_ptr, win_ptr, 300, 300, 0xFFFFFF, "Ciao, Mondo!");
+
+    mlx_loop(mlx_ptr);
+
+    return 0;
+}
+```
+### Main Test
+3. Esempio di gestione degli eventi del mouse:
+```c
+#include <mlx.h>
+#include <stdio.h>
+
+int mouse_event(int button, int x, int y, void *param)
+{
+    if (button == 1) // Pulsante sinistro del mouse
+    {
+        printf("Hai cliccato il pulsante sinistro del mouse alle coordinate (%d, %d)\n", x, y);
+    }
+    else if (button == 2) // Pulsante centrale del mouse
+    {
+        printf("Hai cliccato il pulsante centrale del mouse alle coordinate (%d, %d)\n", x, y);
+    }
+    else if (button == 3) // Pulsante destro del mouse
+    {
+        printf("Hai cliccato il pulsante destro del mouse alle coordinate (%d, %d)\n", x, y);
+    }
+
+    return 0;
+}
+
+int main()
+{
+    void *mlx_ptr;
+    void *win_ptr;
+
+    mlx_ptr = mlx_init();
+    win_ptr = mlx_new_window(mlx_ptr, 800, 600, "Finestra di Esempio");
+
+    mlx_mouse_hook(win_ptr, mouse_event, NULL);
+
+    mlx_loop(mlx_ptr);
+
+    return 0;
+}
+```
+
+4. Esempio di gestione della pressione dei tasti:
+```c
+#include <mlx.h>
+#include <stdio.h>
+
+int key_event(int keycode, void *param)
+{
+    if (keycode == 53) // Codice ASCII per il tasto ESC
+    {
+        printf("Hai premuto il tasto ESC. Il programma verrà terminato.\n");
+        exit(0);
+    }
+    else
+    {
+        printf("Hai premuto il tasto con il codice ASCII %d\n", keycode);
+    }
+
+    return 0;
+}
+
+int main()
+{
+    void *mlx_ptr;
+    void *win_ptr;
+
+    mlx_ptr = mlx_init();
+    win_ptr = mlx_new_window(mlx_ptr, 800, 600, "Finestra di Esempio");
+
+    mlx_key_hook(win_ptr, key_event, NULL);
+
+    mlx_loop(mlx_ptr);
+
+    return 0;
+}
+```
