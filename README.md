@@ -110,5 +110,3 @@ La funzione `mlx_mouse_hide()` viene utilizzata per nascondere il cursore del mo
 void mlx_mouse_show(void);
 ```
 La funzione `mlx_mouse_show()` viene utilizzata per mostrare il cursore del mouse.
-
-```
