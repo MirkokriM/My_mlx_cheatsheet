@@ -110,3 +110,38 @@ La funzione `mlx_mouse_hide()` viene utilizzata per nascondere il cursore del mo
 void mlx_mouse_show(void);
 ```
 La funzione `mlx_mouse_show()` viene utilizzata per mostrare il cursore del mouse.
+
+## Funzione: mlx_mouse_move()
+```c
+#include <mlx.h>
+int mlx_mouse_move(void *win_ptr, int x, int y);
+```
+La funzione `mlx_mouse_move()` viene utilizzata per spostare il cursore del mouse all'interno di una finestra specificata. Riceve come argomenti il puntatore alla finestra di destinazione e le nuove coordinate (x, y) del cursore.
+
+## Funzione: mlx_expose_hook()
+```c
+#include <mlx.h>
+int mlx_expose_hook(void *win_ptr, int (*funct_ptr)(), void *param);
+```
+La funzione `mlx_expose_hook()` viene utilizzata per associare una funzione di gestione degli eventi all'esposizione di una finestra. Viene chiamata quando una parte o l'intera finestra diventa visibile dopo essere stata coperta da un'altra finestra o oggetto. Riceve come argomenti il puntatore alla finestra di destinazione, un puntatore alla funzione che verrà chiamata quando si verifica l'evento e un puntatore a un parametro opzionale che può essere passato alla funzione.
+
+## Funzione: mlx_loop_timeout()
+```c
+#include <mlx.h>
+int mlx_loop_timeout(void *mlx_ptr, int (*funct_ptr)(), void *param, unsigned int milliseconds);
+```
+La funzione `mlx_loop_timeout()` viene utilizzata per eseguire una funzione di gestione degli eventi dopo un ritardo specificato in millisecondi. Questa funzione è utile per introdurre pause o eseguire azioni periodiche nel ciclo di gestione degli eventi di MLX. Riceve come argomenti il puntatore alla connessione, un puntatore alla funzione da eseguire, un puntatore a un parametro opzionale e il ritardo in millisecondi.
+
+## Funzione: mlx_loop_end()
+```c
+#include <mlx.h>
+void mlx_loop_end(void *mlx_ptr);
+```
+La funzione `mlx_loop_end()` viene utilizzata per terminare il loop principale di MLX. Viene chiamata per interrompere il ciclo di gestione degli eventi e terminare il programma in modo controllato. Riceve come argomento il puntatore alla connessione.
+
+## Funzione: mlx_sync()
+```c
+#include <mlx.h>
+int mlx_sync(int sync);
+```
+La funzione `mlx_sync()` viene utilizzata per abilitare o disabilitare la sincronizzazione dei comandi inviati al server X. Quando la sincronizzazione è abilitata, ogni comando viene eseguito in modo sincrono, assicurando che venga completato prima di eseguire il comando successivo. Riceve come argomento un valore intero che specifica se la sincronizzazione deve essere abilitata (1) o disabilitata (0).
