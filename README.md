@@ -49,9 +49,7 @@ La funzione `mlx_new_image()` viene utilizzata per creare una nuova immagine vuo
 #include <mlx.h>
 char *mlx_get_data_addr(void *img_ptr, int *bits_per_pixel, int *size_line, int *endian);
 ```
-La funzione `mlx_get_data_addr()` viene utilizzata per ottenere un puntatore ai dati dell'immagine. Riceve come arg
-
-omenti il puntatore all'immagine restituito da `mlx_new_image()` e puntatori a interi per memorizzare il numero di bit per pixel, la lunghezza della riga di dati e l'endianess dei dati. Restituisce un puntatore ai dati dell'immagine.
+La funzione `mlx_get_data_addr()` viene utilizzata per ottenere un puntatore ai dati dell'immagine. Riceve come argomenti il puntatore all'immagine restituito da `mlx_new_image()` e puntatori a interi per memorizzare il numero di bit per pixel, la lunghezza della riga di dati e l'endianess dei dati. Restituisce un puntatore ai dati dell'immagine.
 
 ## Funzione: mlx_put_image_to_window()
 ```c
