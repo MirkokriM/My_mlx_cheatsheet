@@ -37,6 +37,13 @@ void mlx_destroy_window(void *mlx_ptr, void *win_ptr);
 ```
 La funzione `mlx_destroy_window()` viene utilizzata per distruggere una finestra precedentemente creata. Riceve come argomenti il puntatore alla connessione e il puntatore alla finestra da distruggere.
 
+## Funzione: mlx_destroy_image()
+```c
+#include <mlx.h>
+void mlx_destroy_image(void *mlx_ptr, void *win_ptr);
+```
+La funzine `mlx_destroy_window()` viene utilizzata per distruggere quallunque contenuto visualizzato nella finestra. Riceve come argomenti il puntatore alla connessione e il puntatore alla finestra da distruggere.
+
 ## Funzione: mlx_new_image()
 ```c
 #include <mlx.h>
