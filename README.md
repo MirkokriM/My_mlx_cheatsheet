@@ -151,6 +151,40 @@ int mlx_sync(int sync);
 ```
 La funzione `mlx_sync()` viene utilizzata per abilitare o disabilitare la sincronizzazione dei comandi inviati al server X. Quando la sincronizzazione è abilitata, ogni comando viene eseguito in modo sincrono, assicurando che venga completato prima di eseguire il comando successivo. Riceve come argomento un valore intero che specifica se la sincronizzazione deve essere abilitata (1) o disabilitata (0).
 
+## Funzione: mlx_clear_image()
+```c
+#include <mlx.h>
+int mlx_clear_image(void *img_ptr, int color);
+```
+La funzione `mlx_clear_image()` viene utilizzata per cancellare il contenuto di un'immagine specificata, riempiendola con un colore specifico. Riceve come argomenti il puntatore all'immagine e il colore con cui riempire l'immagine.
+
+## Funzione: mlx_get_screen_size()
+```c
+#include <mlx.h>
+void mlx_get_screen_size(void *mlx_ptr, int *width, int *height);
+```
+La funzione `mlx_get_screen_size()` viene utilizzata per ottenere la dimensione dello schermo in pixel. Riceve come argomenti il puntatore alla connessione e i puntatori a interi per memorizzare la larghezza e l'altezza dello schermo.
+
+## Funzione: mlx_get_color_value()
+```c
+#include <mlx.h>
+int mlx_get_color_value(void *mlx_ptr, int color);
+```
+La funzione `mlx_get_color_value()` viene utilizzata per ottenere il valore numerico corrispondente a un colore specifico. Riceve come argomenti il puntatore alla connessione e il colore specificato come combinazione RGB.
+
+## Funzione: mlx_string_width()
+```c
+#include <mlx.h>
+int mlx_string_width(void *mlx_ptr, void *win_ptr, char *string);
+```
+La funzione `mlx_string_width()` viene utilizzata per ottenere la larghezza in pixel di una stringa di testo specificata. Riceve come argomenti il puntatore alla connessione, il puntatore alla finestra di destinazione e la stringa di testo.
+
+## Funzione: mlx_do_sync()
+```c
+#include <mlx.h>
+int mlx_do_sync(void *mlx_ptr);
+```
+La funzione `mlx_do_sync()` viene utilizzata per sincronizzare le chiamate alle funzioni MLX con il server X. Aspetta che tutte le richieste di rendering siano state elaborate prima di restituire il controllo al programma. Riceve come argomento il puntatore alla connessione.
 
 ### Test Main
 
@@ -191,7 +225,7 @@ int main()
     return 0;
 }
 ```
-### Main Test
+
 3. Esempio di gestione degli eventi del mouse:
 ```c
 #include <mlx.h>
