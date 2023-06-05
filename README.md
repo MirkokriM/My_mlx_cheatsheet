@@ -1,5 +1,36 @@
 # Cheat Sheet: Funzioni di MLX per Linux
 
+- [Introduzione](#introduzione)
+- [Funzione: mlx_init()](#funzione-mlx_init)
+- [Funzione: mlx_new_window()](#funzione-mlx_new_window)
+- [Funzione: mlx_pixel_put()](#funzione-mlx_pixel_put)
+- [Funzione: mlx_loop()](#funzione-mlx_loop)
+- [Funzione: mlx_destroy_window()](#funzione-mlx_destroy_window)
+- [Funzione: mlx_destroy_image()](#funzione-mlx_destroy_image)
+- [Funzione: mlx_new_image()](#funzione-mlx_new_image)
+- [Funzione: mlx_get_data_addr()](#funzione-mlx_get_data_addr)
+- [Funzione: mlx_put_image_to_window()](#funzione-mlx_put_image_to_window)
+- [Funzione: mlx_key_hook()](#funzione-mlx_key_hook)
+- [Funzione: mlx_mouse_hook()](#funzione-mlx_mouse_hook)
+- [Funzione: mlx_loop_hook()](#funzione-mlx_loop_hook)
+- [Funzione: mlx_clear_window()](#funzione-mlx_clear_window)
+- [Funzione: mlx_string_put()](#funzione-mlx_string_put)
+- [Funzione: mlx_mouse_hide()](#funzione-mlx_mouse_hide)
+- [Funzione: mlx_mouse_show()](#funzione-mlx_mouse_show)
+- [Funzione: mlx_mouse_move()](#funzione-mlx_mouse_move)
+- [Funzione: mlx_expose_hook()](#funzione-mlx_expose_hook)
+- [Funzione: mlx_loop_timeout()](#funzione-mlx_loop_timeout)
+- [Funzione: mlx_loop_end()](#funzione-mlx_loop_end)
+- [Funzione: mlx_sync()](#funzione-mlx_sync)
+- [Funzione: mlx_clear_image()](#funzione-mlx_clear_image)
+- [Funzione: mlx_get_screen_size()](#funzione-mlx_get_screen_size)
+- [Funzione: mlx_get_color_value()](#funzione-mlx_get_color_value)
+- [Funzione: mlx_string_width()](#funzione-mlx_string_width)
+- [Funzione: mlx_do_sync()](#funzione-mlx_do_sync)
+- [Test Main](#test-main)
+
+## Introduzione
+
 Di seguito è riportato un elenco completo delle funzioni di MLX per la gestione della grafica in Linux, insieme alle loro spiegazioni dettagliate.
 
 ## Funzione: mlx_init()
